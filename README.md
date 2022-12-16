@@ -3,9 +3,9 @@
 ## For React Applications
 
  To deploy your application at GitHub pages, you'll need to add a home page property to your package.json which points to the deployed base URL of your GitHub Pages site.
- 
+
  *NOTE: This will break deployments to other hosting services such as Netlify, Vercel, or AWS Amplify, so if you later wish to deploy there, remove this property completely*
- 
+
      {
        "homepage": "https://yourname.github.io/repository-name"
      }
@@ -34,4 +34,12 @@ If you are creating a module to deploy at NPM, you'll want a "bin" section that 
 Additionally, that file should have as it's first line, so that it'll run without having to type "node filename.js" every time
 
 #!/usr/bin/env node
+
+
+
+
+
+
+Feature:
+Mapped correlating tones to positions on keybaord as though it were piano keys.
 
