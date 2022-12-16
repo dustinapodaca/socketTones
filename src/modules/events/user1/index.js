@@ -16,54 +16,54 @@ socket.on('pressKey', (payload) => {
 
 setInterval(() => {
   setTimeout(() => {
-    socket.emit('pressKey', {
-      user: 'USER ONE PLAYING NOTES:',
-      note: 'E5',
-      duration: '16n',
-    });
     console.log('--------------------------------------------------------------');
     console.log('---------------------- USER ONE EMIT -------------------------');
     console.log('-------------------- PRESSING KEY NOTES ----------------------');
     console.log('--------------------------------------------------------------');
 
+    socket.emit('pressKey', {
+      user: 'USER ONE PLAYING NOTES',
+      note: 'E5',
+      duration: '16n',
+    });
     setTimeout(() => {
       socket.emit('pressKey', {
-        user: 'USER ONE PLAYING NOTES:',
+        user: 'USER ONE PLAYING NOTES',
         note: 'E5',
         duration: '16n',
       });
     }, 325);
     setTimeout(() => {
       socket.emit('pressKey', {
-        user: 'USER ONE PLAYING NOTES:',
+        user: 'USER ONE PLAYING NOTES',
         note: 'E5',
         duration: '16n',
       });
     }, 650);
     setTimeout(() => {
       socket.emit('pressKey', {
-        user: 'USER ONE PLAYING NOTES:',
+        user: 'USER ONE PLAYING NOTES',
         note: 'C5',
         duration: '16n',
       });
     }, 1100);
     setTimeout(() => {
       socket.emit('pressKey', {
-        user: 'USER ONE PLAYING NOTES:',
+        user: 'USER ONE PLAYING NOTES',
         note: 'E5',
         duration: '16n',
       });
     }, 1300);
     setTimeout(() => {
       socket.emit('pressKey', {
-        user: 'USER ONE PLAYING NOTES:',
+        user: 'USER ONE PLAYING NOTES',
         note: 'G5',
         duration: '16n',
       });
     }, 1600);
     setTimeout(() => {
       socket.emit('pressKey', {
-        user: 'USER ONE PLAYING NOTES:',
+        user: 'USER ONE PLAYING NOTES',
         note: 'G4',
         duration: '16n',
       });
