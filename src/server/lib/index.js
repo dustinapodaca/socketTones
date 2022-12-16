@@ -13,7 +13,7 @@ const io = new Server(httpServer);
 
 io.use(cors());
 
-const tones = io.of('/');
+const tones = io.of('/synth');
 
 tones.on('connection', (socket) => {
   console.log('Connected to Socket Server:', socket.id);
@@ -24,7 +24,14 @@ tones.on('connection', (socket) => {
     socket.emit('join', id);
   });
 
-
+  socket.on('pressKey', (payload) => {
+    console.log('-------------------------------------------------------------');
+    console.log('----------------- HUB: KEY PRESS RECEIVED -------------------');
+    console.log(payload);
+    socket.broadcast.emit('pressKey', payload);
+    socket.broadcast.to(payload.room).emit('pressKey', payload);
+    socket.to(payload.room).emit('pressKey', payload);
+  });
 });
 
 // app.get('/', function (req, res) {
