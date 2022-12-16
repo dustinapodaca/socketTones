@@ -4,7 +4,7 @@
   "description": "## For React Applications",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node index.js --trace-warnings",
     "test": "jest --verbose --coverage --detectOpenHandles",
     "test-watch": "jest --watchAll --verbose --coverage",
     "db:config": "sequelize init:config",
