@@ -2,6 +2,22 @@
 
 const { io } = require('socket.io-client');
 const socket = io('http://localhost:3001/synth');
+const { playerQueue } = require('../../../server/lib/index');
+// const Tone = require('tone');
+
+// const context = new Tone.OfflineContext(1, 1, 44100);
+// const buffer = context.createBuffer(1, 44100, 44100);
+
+// const data = buffer.getChannelData(0);
+// for (let i = 0; i < 44100; i++) {
+//   data[i] = Math.sin(i / 44100 * Math.PI * 440);
+// }
+// const osc = new Tone.Oscillator({ context });
+// context.render().then((buffer) => {
+//   const source = new Tone.BufferSource(buffer).connect(context.destination);
+//   const synth = new Tone.Synth().connect(source).toDestination();
+//   synth.start();
+// });
 
 socket.emit('join', 'soundscape');
 
@@ -9,6 +25,12 @@ socket.on('pressKey', (payload) => {
   console.log('--------------------------------------------------------------');
   console.log('-------------------- KEY PRESS RECEIVED ----------------------');
   console.log(payload);
+  console.log(playerQueue);
+
+  console.log('----- Take In Notes and Duration Arrays Here and Dequeue -----');
+  playerQueue.dequeue();
+  playerQueue.dequeue();
+  console.log(playerQueue);
   // const synth = new Tone.Synth().toDestination();
   // const now = Tone.now();
   // synth.triggerAttackRelease(payload.note, payload.duration, now);
