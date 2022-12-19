@@ -8,9 +8,11 @@
 ##  Problem Domain
 
 - Responsible for planning, executing, and presenting an application that showcases an event driven architecture
+- A simple and efficient way to share musical ideas live in real time.
 - A “hub” Socket Server that moderates all events
 - Multiple “clients” that connect to the hub which can both publish and subscribe to events
 - Must operate over a network
+
 
 ## Output Representation
 
