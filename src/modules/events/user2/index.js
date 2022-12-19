@@ -29,7 +29,7 @@ socket.on('pressKey', (payload) => {
   console.log('-------------------- KEY PRESS RECEIVED ----------------------');
   console.log(payload);
 
-  console.log('----- Dequeue From PlayerQueue -----');
+  console.log('----- Take In Notes and Duration Arrays Here and Dequeue -----');
   playerQueue.dequeue();
 
   // const synth = new Tone.Synth().toDestination();
@@ -72,15 +72,6 @@ setInterval(() => {
   }, 7000);
 }, 10000);
 
-// const context = new Tone.OfflineContext(1, 1, 44100);
-// const source = context.createBufferSource();
-// source.buffer = buffer;
-// source.connect(context.destination);
-// context.startRendering();
-// context.oncomplete = (e) => {
-//   const source = new Tone.BufferSource(e.renderedBuffer).connect(context.destination);
-//   source.start();
-// };
 
 // const playNote = (note, duration, time) => {
 //   const player = new Tone.Player(AudioBuffer).toDestination();
@@ -102,6 +93,16 @@ setInterval(() => {
 //   return player;
 // };
 
+
+// const context = new Tone.OfflineContext(1, 1, 44100);
+// const source = context.createBufferSource();
+// source.buffer = buffer;
+// source.connect(context.destination);
+// context.startRendering();
+// context.oncomplete = (e) => {
+//   const source = new Tone.BufferSource(e.renderedBuffer).connect(context.destination);
+//   source.start();
+// };
 
 // const player = new Tone.Player().toDestination();
 // const renderingPromise = Tone.Offline(({ transport }) => {
