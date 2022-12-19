@@ -2,19 +2,41 @@
 
 const { io } = require('socket.io-client');
 const socket = io('http://localhost:3001/synth');
+const { playerQueue } = require('../../../server/lib/index');
 // const playNote = require('../../tones/tone');
 // const Tone = require('tone');
+// const fs = require('fs');
+// const { exec } = require('child_process');
 
 socket.emit('join', 'soundscape');
+
+// socket.on('playAudio', (data) => {
+//   console.log('--------------------------------------------------------------');
+//   console.log('-------------------- AUDIO PLAY RECEIVED ---------------------');
+//   console.log(data);
+//   fs.writeFileSync('audio.wav', data);
+//   exec('afplay audio.wav', (err, stdout, stderr) => {
+//     if (err) {
+//       console.log(`{ exec } error: ${err}`);
+//     }
+//     console.log(`stdout: ${stdout}`);
+//     console.log(`stderr: ${stderr}`);
+//   });
+// });
 
 socket.on('pressKey', (payload) => {
   console.log('--------------------------------------------------------------');
   console.log('-------------------- KEY PRESS RECEIVED ----------------------');
   console.log(payload);
+
+  console.log('----- Dequeue From PlayerQueue -----');
+  playerQueue.dequeue();
+
   // const synth = new Tone.Synth().toDestination();
   // const now = Tone.now();
   // synth.triggerAttackRelease(payload.note, payload.duration, now);
 });
+
 setInterval(() => {
   setTimeout(() => {
     console.log('--------------------------------------------------------------');
@@ -50,7 +72,15 @@ setInterval(() => {
   }, 7000);
 }, 10000);
 
-
+// const context = new Tone.OfflineContext(1, 1, 44100);
+// const source = context.createBufferSource();
+// source.buffer = buffer;
+// source.connect(context.destination);
+// context.startRendering();
+// context.oncomplete = (e) => {
+//   const source = new Tone.BufferSource(e.renderedBuffer).connect(context.destination);
+//   source.start();
+// };
 
 // const playNote = (note, duration, time) => {
 //   const player = new Tone.Player(AudioBuffer).toDestination();
