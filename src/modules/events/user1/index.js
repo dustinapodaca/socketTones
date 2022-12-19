@@ -25,12 +25,10 @@ socket.on('pressKey', (payload) => {
   console.log('--------------------------------------------------------------');
   console.log('-------------------- KEY PRESS RECEIVED ----------------------');
   console.log(payload);
-  console.log(playerQueue);
+  // console.log(playerQueue);
 
   console.log('----- Take In Notes and Duration Arrays Here and Dequeue -----');
   playerQueue.dequeue();
-  playerQueue.dequeue();
-  console.log(playerQueue);
   // const synth = new Tone.Synth().toDestination();
   // const now = Tone.now();
   // synth.triggerAttackRelease(payload.note, payload.duration, now);
