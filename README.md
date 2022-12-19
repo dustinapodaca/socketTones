@@ -47,8 +47,7 @@
 - How do you run tests?
   - `npm test`
 
-##  UML
+## UML
 Link to an image of the UML for your application and response to events:
 
-- Coming Soon
-<!-- ![UML3](./assets/img/UML-SocketQueues.png) -->
+![UML](./assets/img/UML-socketTones.png)
